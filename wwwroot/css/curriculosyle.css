@@ -1,0 +1,243 @@
+﻿/* Estilo para o contêiner principal(faz a folha branca por tras) */
+.curriculo-container {
+    background-color: #f8f9fa; 
+    border-radius: 15px; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); 
+    padding: 40px; 
+    margin: 50px auto; 
+    width: 95%; 
+    max-width: 900px; 
+}
+
+/* Estilo inicial dos cards (para animação de cada informação) */
+.scroll-card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 2.0s ease-out, transform 2.0s ease-out;
+    will-change: opacity, transform;
+}
+
+/* Estilo final (quando o card está visível) */
+.scroll-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body {
+    background-color: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo para cada card individual */
+.curriculo-card {
+    background-color: #ffffff;
+    color: #333;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.curriculo-card h1, h3 {
+    text-align: center;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    border-right: 1px solid #dee2e6;
+}
+
+.curriculo-card {
+    background-color: #fff;
+    border-radius: 24px;
+    transition: all 0.6s ease-out;
+    opacity: 0;
+    transform: translateY(40px);
+}
+    
+.curriculo-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* Estilo geral para os botões de contato */
+.contato {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
+    margin-top: 20px; 
+}
+
+.btn-contato {
+    display: inline-block; 
+    background-color: #ffffff; 
+    color: black; 
+    text-decoration: none; 
+    padding: 10px 20px; 
+    border: solid 0.1px;
+    border-radius: 5px; 
+    margin: 5px; 
+    transition: background-color 0.3s ease; 
+}
+
+/* Efeito de hover (quando o mouse passa por cima dos botões de contato)  */
+.btn-telefone:hover {
+    transform: scale(1.2);
+    transition: transform 0.4s ease;
+    background-color: #009688; 
+    border-color: #b1b1b1;
+    color: white;
+}
+
+.btn-whatsapp:hover {
+    transform: scale(1.2);
+    transition: transform 0.4s ease;
+    background-color: #25d366; 
+    border-color: #b1b1b1;
+    color: white;
+}
+
+.btn-email:hover {
+    transform: scale(1.2);
+    transition: transform 0.4s ease;
+    background-color: #0078d4; 
+    border-color: #b1b1b1;
+    color: white;
+}
+
+.btn-linkedin:hover {
+    transform: scale(1.2);
+    transition: transform 0.4s ease;
+    background-color: #0077B5; 
+    border-color: #b1b1b1;
+    color: white;
+}
+
+.btn-github:hover {
+    transform: scale(1.2);
+    transition: transform 0.4s ease;
+    background-color: #181717; 
+    border-color: #b1b1b1;
+    color: white;
+}
+
+
+
+/*efeito de digitação no sobre e na page inicial*/
+.typing-cursor{
+    display: inline-block;
+    width: 2px;
+    height: 1.2em; /* Ajuste a altura conforme a sua fonte */
+    background-color: black;
+    margin-left: 5px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/*"alert" de numero de telefone copiado com sucesso*/
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.toast-message {
+    background-color: #28a745; 
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.toast-message.show {
+    opacity: 1;
+}
+
+/* Estilo para o container das habilidades */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 10px; 
+    padding: 20px; 
+}
+
+
+/* Estilo para cada "box" de habilidade */
+.skill-badge {
+    background-color: #e9ecef; 
+    color: #495057; 
+    padding: 8px 15px;
+    border-radius: 20px; 
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.curriculo-card h3{
+    margin-top: 20px;
+    margin-bottom: 10px; 
+ 
+}
+
+
+.botao-download {
+
+    display: inline-flex;
+    justify-content: flex-start;
+    color: white;
+    background-color: #007aff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom:5px;
+    margin-top: 10px;
+    bottom: 10px;
+  
+}
+
+.botao-download:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s ease;
+    background-color: #009688;
+    border-color: #b1b1b1;
+    color: white;
+}
+
+footer {
+
+    text-align: left;
+    color: #ffffff46
+}
+
+
+

@@ -1,0 +1,90 @@
+﻿@using MeuCurriculo.Model
+
+@section Scripts {
+    <script src="~/js/curriculojs.js"></script>
+}
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Currículo João";
+}
+
+<link rel="stylesheet" href="~/css/curriculosyle.css" asp-append-version="true" />
+
+<div class="curriculo-container">
+    <div class="curriculo-card scroll-card">    
+        <h1>@Model.Nome</h1>
+        <h3>@Model.Funcao</h3>
+
+        
+        <div class="contato">
+            <a href="#" onclick="copiarNumero(this)" class="btn-contato grow-hover btn-telefone" data-numero="16991354633"><i class="fas fa-phone"></i>Telefone</a>
+            <a href="https://wa.me/16991354633?text=Olá João,%20vi%20seu%20currículo%20e%20gostaria%20de%20entrar%20em%20contato." class="btn-contato btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+            <a href="mailto:jho_jbbantonio11@live.com" class="btn-contato grow-hover btn-email" target="_blank"><i class="fas fa-envelope"></i>Email</a>
+            <a href="https://www.linkedin.com/in/joao-franca-808180229" class="btn-contato btn-linkedin" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+            <a href="https://github.com/Jonastheprogram" class="btn-contato btn-github" target="_blank"><i class="fab fa-github"></i>GitHub</a>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <div class="curriculo-card containerS mt-5 scroll-card">
+        <h2>Sobre Mim</h2>
+        <p id="sobremim">@Model.Sobremim</p>
+    </div>
+
+    <div class="curriculo-card mt-5 scroll-card">
+        <h2>Experiência Profissional</h2>
+        @foreach (var e in Model.Experiencias)
+        {
+            <div>
+                <h5>@e.Cargo</h5>
+                <p>@e.Empresa</p>
+                <p>@e.Periodo</p>
+                <p>@e.DescricaoCargo</p>
+            </div>
+        }
+    </div>
+
+    <div class="curriculo-card mt-5 scroll-card">
+        <h2>Formação Acadêmica</h2>
+        @foreach (var f in Model.Formacoes)
+        {
+            <div>
+                <h5>@f.Curso</h5>
+                <p>@f.Instituicao</p>
+                 <p>@f.DataInicio — @f.DataFim</p>
+            </div>
+        }
+    </div>
+
+    <div class="curriculo-card mt-5 scroll-card">
+        <h2>Idiomas</h2>
+        @foreach (var i in Model.Idiomas)
+        {
+            <p>@i.Idioma — @i.Nivel</p>
+        }
+    </div>
+
+    <div class="curriculo-card mt-5 scroll-card">
+        <h3>Hard Skills</h3>
+        <div class="skills-container" id="hardskills">
+            @foreach (var s in Model.HardSkills)
+            {
+                <span class="skill-badge">@s.HardSkills</span>
+            }</div>
+
+        <h3>Soft Skills</h3>
+        <div class="skills-container" id="softskills">
+            @foreach (var s in Model.SoftSkills)
+            {
+                <span class="skill-badge">@s.SoftSkills</span>
+            }
+        </div>
+    </div>
+    <a href="~/lib/JoaoFrancaTEC.pdf" download class="botao-download"><i class="fas fa-download "></i>Baixar Currículo</a>
+    <p>Atualizado em 01/08/2025</p>
+</div>
+<footer>
+    <p>Site feito por João França utilizando ASP.NET Core Web App (MVC)</p>
+</footer>

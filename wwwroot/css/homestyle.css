@@ -1,0 +1,85 @@
+﻿
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: black;
+    border: solid 0.1px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.grow-hover {
+    transition: transform 0.4s ease;
+}
+
+.grow-hover:hover {
+    transform: scale(1.3);
+    border-color: #b1b1b1;
+    background-color: #b1b1b1
+}
+
+
+.containerH {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 2s ease-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bemvindo {
+    opacity: 0;
+    animation: fadeInUp 3s ease-in forwards
+}
+
+@keyframes fade {
+    to {
+        opacity: 1;
+    }
+}
+
+.typing-text {
+    font-size: 1.5em;
+}
+
+.typing-cursor {
+    display: inline;
+    width: 1px;
+    height: 1em; /* Ajuste a altura conforme o seu texto */
+    background-color: black;
+    margin-left: 5px;
+    animation: blink 0.2s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+
