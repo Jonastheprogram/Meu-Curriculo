@@ -1,9 +1,14 @@
 var builder = WebApplication.CreateBuilder(args);
 
+
+
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddControllersWithViews();
-builder.Services.AddHttpClient();
+builder.Services.AddHttpClient("MeuCurriculoClient", client =>
+    {
+        client.BaseAddress = new Uri("https://meu-curriculo-mvc.onrender.com");
+    });
 
 
 var app = builder.Build();
@@ -27,6 +32,9 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=IndexHome}/{id?}");
+
+
+
 
 app.Run();
 

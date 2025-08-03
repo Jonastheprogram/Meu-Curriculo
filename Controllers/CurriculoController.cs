@@ -7,17 +7,17 @@ public class CurriculoController : Controller
 
     public CurriculoController(IHttpClientFactory httpClientFactory)
     {
-        _http = httpClientFactory.CreateClient();
+        _http = httpClientFactory.CreateClient("MeuCurriculoClient");
     }
 
     public async Task<IActionResult> CurriculoIndex()
     {
        
-        var experiencias = await _http.GetFromJsonAsync<List<ExperienciaModel>>("http://localhost:5051/api/experiencia");
-        var formacoes = await _http.GetFromJsonAsync<List<FormacaoModel>>("http://localhost:5051/api/formacao");
-        var idiomas = await _http.GetFromJsonAsync<List<IdiomaModel>>("http://localhost:5051/api/idioma");
-        var hardskills = await _http.GetFromJsonAsync<List<HardSkillsModel>>("http://localhost:5051/api/hardskills");
-        var softskills = await _http.GetFromJsonAsync<List<SoftSkillsModel>>("http://localhost:5051/api/softskills");
+        var experiencias = await _http.GetFromJsonAsync<List<ExperienciaModel>>("/api/experiencia");
+        var formacoes = await _http.GetFromJsonAsync<List<FormacaoModel>>("/api/formacao");
+        var idiomas = await _http.GetFromJsonAsync<List<IdiomaModel>>("/api/idioma");
+        var hardskills = await _http.GetFromJsonAsync<List<HardSkillsModel>>("/api/hardskills");
+        var softskills = await _http.GetFromJsonAsync<List<SoftSkillsModel>>("/api/softskills");
 
         var model = new CurriculoViewModel
         {
