@@ -80,6 +80,26 @@
 }
 
 
+@media (max-width: 768px) {
+    .containerH {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .bemvindo{
+        text-align:center;
+
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    
+}
+
 
 
 

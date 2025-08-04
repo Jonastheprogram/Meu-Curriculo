@@ -1,12 +1,18 @@
-﻿/* Estilo para o contêiner principal(faz a folha branca por tras) */
+﻿* {
+    box-sizing: border-box;
+}
+
+/* Estilo para o contêiner principal(faz a folha branca por tras) */
+
 .curriculo-container {
-    background-color: #f8f9fa; 
-    border-radius: 15px; 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); 
-    padding: 40px; 
-    margin: 50px auto; 
-    width: 95%; 
-    max-width: 900px; 
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    margin: 50px auto;
+    width: 100%;
+    max-width: 900px;
+    box-sizing: border-box;
 }
 
 /* Estilo inicial dos cards (para animação de cada informação) */
@@ -241,3 +247,55 @@ footer {
 
 
 
+@media (max-width: 768px) {
+    .curriculo-container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .curriculo-card {
+        padding: 20px;
+        margin-bottom: 15px;
+    }
+
+    .curriculo-card h1 {
+        font-size: 1.6rem;
+    }
+
+    .curriculo-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .contato {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn-contato {
+        width: 100%;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .skills-container {
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .skill-badge {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+
+    .botao-download {
+        width: 100%;
+        justify-content: center;
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 0.85rem;
+    }
+}
